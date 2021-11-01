@@ -1,0 +1,151 @@
+@import "../../styles/variables.scss";
+
+.CommentModalView {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    overflow-y: scroll;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, .6);
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s ease;
+
+    &--show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &__window {
+        position: relative;
+        border-radius: 6px;
+        width: 1200px;
+        padding: 20px;
+        background-color: $textColor;
+        box-shadow: 4px -1px 18px 17px rgba(34, 60, 80, 0.2);
+
+        @media screen and(max-width: 1200px) {
+            width: 95%;
+        }
+    }
+
+    &__heading {
+        color: $primaryColor;
+        margin-bottom: 50px;
+    }
+
+    &__empty-block {
+        padding: 10px;
+        border-radius: 10px;
+        color: $textColor;
+        background-color: $primaryColor;
+        text-align: center;
+    }
+
+    &__close-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: $textColor;
+        background-color: $primaryColor;
+        font-weight: bold;
+        font-size: 20px;
+        padding: 7px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        transition: background-color .2s ease;
+
+        &:hover {
+            background-color: lighten($primaryColor, 10);
+        }
+    }
+
+    &__form {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__textarea {
+        width: 100%;
+        border: 1px solid $primaryColor;
+        border-radius: 6px;
+        min-height: 200px;
+        resize: vertical;
+        padding: 10px;
+    }
+
+    &__button-wrap {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 10px;
+    }
+
+    &__button-send {
+        color: $textColor;
+        padding: 20px;
+        font-weight: bold;
+        background-color: $primaryColor;
+        border: 1px solid $primaryColor;
+        transition: all .2s ease;
+        text-transform: uppercase;
+        outline: none;
+        cursor: pointer;
+        border-radius: 10px;
+
+        &:hover {
+            background-color: lighten($primaryColor, 10);
+            border-color: lighten($primaryColor, 10);;
+        }   
+    }
+
+    &__comments-list {
+        display: flex;
+        flex-direction: column;
+        padding-right: 10px;
+        max-height: 250px;
+        overflow-y: scroll;
+    }
+
+    &__list-item {
+        background-color: $primaryColor;
+        color: $textColor;
+        border-radius: 6px;
+        padding: 5px;
+        margin-bottom: 20px;
+        position: relative;
+
+        &:last-child {
+            margin: 0;
+        }
+    }
+
+    &__info {
+        font-weight: bold;
+        margin-bottom: 10px;
+
+        &:last-child {
+            margin: 0;
+        }
+    }
+
+    &__delete-btn {
+        color: white;
+        background-color: tomato;
+        outline: none;
+        padding: 5px;
+        font-weight: bold;
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        border: 1px solid tomato;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,54 @@
+@import '../../styles/variables.scss';
+
+.MoviesView {
+    min-height: 100vh;
+    position: relative;
+
+    &__heading {
+        color: $primaryColor;
+        font-size: 35px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 50px;
+        margin-top: 50px;
+    }
+
+    &__loader {
+        height: 50px;
+        width: 50px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        opacity: 1;
+        visibility: visible;
+        transition: all .3s ease;
+
+        &--hide {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+
+    &__data {
+        opacity: 1;
+        transition: opacity .2s ease;
+
+        &--hide {
+            opacity: .2;
+        }
+    }
+
+    &__pagination {
+        margin-bottom: 40px;
+
+        &--bottom {
+            margin-top: 40px;
+            margin-bottom: 0;
+        }
+    }
+}

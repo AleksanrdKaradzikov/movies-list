@@ -1,0 +1,114 @@
+@import "../../styles/variables.scss";
+
+.MoviewItem {
+    display: inline-block;
+    margin-bottom: 40px;
+    min-height: 358px;
+
+    &__hide-block {
+        width: 200px;
+        height: 260px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    &__image-wrap {
+        cursor: pointer;
+        overflow: hidden;
+        width: 200px;
+        border: 5px solid $textColor; 
+        margin-bottom: 10px;
+        position: relative;
+        transition: all .3s ease;
+
+        &:hover {
+            border-color: $primaryColor;
+
+            &  .MoviewItem__info {
+                opacity: 1;
+                visibility: visible;
+            }
+        }   
+    }
+
+    &__hide-button {
+        display: inline-block;
+        padding: 5px;
+        cursor: pointer;
+        overflow: none;
+        font-weight: bold;
+    }
+
+    &__comment-button {
+        cursor: pointer;
+        padding: 10px;
+        background-color: $primaryColor;
+        outline: none;
+        color: $textColor;
+        font-weight: bold;
+        border: 1px solid $primaryColor;
+        border-radius: 3px;
+        transition: all .2s ease;
+
+        &:hover {
+            background-color: lighten($primaryColor, 10);
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(51, 51, 51, .7);
+        transition: all .3s ease;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &__image {
+        display: inline-block;
+        width: 100%;
+        height: 260px;
+        object-fit: cover;
+    }
+
+    &__info-wrap {
+        width: 200px;
+    }
+
+    &__title {
+        font-weight: bold;
+        color: $textColor;
+        font-size: .87em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-bottom: 5px;
+    }
+
+    &__year {
+        color: $grayColor;
+    }
+
+    &__qualitys {
+        margin-top: 10px;
+    }
+
+    &__quality {
+        display: inline-flex;
+        padding: 5px;
+        color: $textColor;
+        background: #222;
+        border-radius: 8px;
+        margin-right: 5px;
+        font-size: 14px;
+    }
+}

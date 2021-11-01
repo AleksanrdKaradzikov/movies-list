@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;700&family=Open+Sans:wght@300;400;700&display=swap');
+@import 'variables.scss';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: $bodyColor;
+    color: $textColor;
+}
+
+.container { 
+    width: 100%;
+    max-width: $containerMaxSize;
+    padding: 0 40px 0 40px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col {
+    padding: 0 10px 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% / 5);
+
+    @media screen and (max-width: 576px) {
+        width: 100%;
+    }
+    
+    @media screen and (min-width: 576px) and (max-width: 768px) {
+        width: calc(100% / 2);
+    }
+
+    @media screen and (min-width: 768px) and  (max-width: 992px) {
+        width: calc(100% / 3);
+    } 
+    
+    @media screen and (min-width: 992px) and  (max-width: 1200px) {
+        width: calc(100% / 4);
+    } 
+}
